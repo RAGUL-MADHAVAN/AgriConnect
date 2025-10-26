@@ -152,7 +152,7 @@ export default function Support() {
                   <div>
                     <div className="font-medium text-gray-300">Email</div>
                     <a href="mailto:support@agriconnect.com" className="text-green-400 hover:text-green-300">
-                      support@agriconnect.com
+                      ragulmadhavans28@gmail.com
                     </a>
                   </div>
                 </div>
@@ -161,7 +161,7 @@ export default function Support() {
                   <div>
                     <div className="font-medium text-gray-300">Phone</div>
                     <a href="tel:+911234567890" className="text-green-400 hover:text-green-300">
-                      +91 123-456-7890
+                      +91 9047693022
                     </a>
                   </div>
                 </div>
