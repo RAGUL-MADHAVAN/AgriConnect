@@ -189,7 +189,7 @@ export default function Reviews() {
           ].map(f => (
             <button
               key={f.id}
-              onClick={() => setFilter(f.id as any)}
+              onClick={() => setFilter(f.id as "all" | "farmers" | "consumers")}
               className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
                 filter === f.id
                   ? 'bg-green-600 text-white shadow-2xl shadow-green-500/50'
@@ -205,7 +205,7 @@ export default function Reviews() {
           <span className="text-sm text-gray-300">Sort by:</span>
           <select
             value={sortBy}
-            onChange={(e) => setSortBy(e.target.value as any)}
+            onChange={(e) => setSortBy(e.target.value as "recent" | "rating" | "helpful")}
             className="px-4 py-2 border-2 border-white/20 bg-slate-800/50 text-white rounded-lg focus:border-green-500 focus:outline-none"
           >
             <option value="recent">Most Recent</option>

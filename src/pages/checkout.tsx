@@ -13,7 +13,7 @@ interface CartItem {
 
 export default function Checkout() {
   const router = useRouter();
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<{ name: string; role: string; phone: string } | null>(null);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [formData, setFormData] = useState({

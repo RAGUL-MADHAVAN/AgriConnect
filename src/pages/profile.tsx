@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Profile() {
   const router = useRouter();
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<{ name: string; role: string; phone: string; verified?: boolean } | null>(null);
   const [isEditing, setIsEditing] = useState(false);
   const [editData, setEditData] = useState({
     name: '',
@@ -26,6 +26,7 @@ export default function Profile() {
   }, [router]);
 
   const handleSave = () => {
+    if (!user) return;
     const updatedUser = { ...user, ...editData };
     localStorage.setItem('agriconnect:user', JSON.stringify(updatedUser));
     setUser(updatedUser);

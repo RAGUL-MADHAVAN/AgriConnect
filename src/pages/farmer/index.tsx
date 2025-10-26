@@ -22,12 +22,31 @@ interface Order {
   date: string;
 }
 
+interface User {
+  name: string;
+  role: string;
+  phone: string;
+  verified?: boolean;
+}
+
+interface Tab {
+  id: "overview" | "products" | "orders";
+}
+
+interface ProductForm {
+  name: string;
+  category: string;
+  price: string;
+  unit: string;
+  stock: string;
+}
+
 export default function FarmerDashboard() {
-  const [user, setUser] = useState<any>(null);
-  const [activeTab, setActiveTab] = useState<"overview" | "products" | "orders">("overview");
+  const [user, setUser] = useState<User | null>(null);
+  const [activeTab, setActiveTab] = useState<Tab["id"]>("overview");
   const [showAddProduct, setShowAddProduct] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
-  const [newProduct, setNewProduct] = useState({
+  const [newProduct, setNewProduct] = useState<ProductForm>({
     name: "",
     category: "Vegetables",
     price: "",

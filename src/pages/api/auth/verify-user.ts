@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { ObjectId } from 'mongodb';
 import clientPromise from '@/lib/mongodb';
 import { verifyToken } from '@/lib/auth';
 
@@ -25,8 +26,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const client = await clientPromise;
     const db = client.db('agriconnect');
     const usersCollection = db.collection('users');
-
-    const { ObjectId } = require('mongodb');
     
     // Update user verification status
     const result = await usersCollection.updateOne(

@@ -39,14 +39,14 @@ export default function Support() {
             Contact Support
           </h1>
           <p className="text-gray-300 text-lg">
-            We're here to help! Get in touch with our support team.
+            We&apos;re here to help! Get in touch with our support team.
           </p>
         </div>
 
         {/* Success Message */}
         {submitted && (
           <div className="bg-green-500/10 border border-green-500/50 text-green-400 px-6 py-4 rounded-lg mb-8 text-center">
-            ✓ Your message has been sent! We'll get back to you within 24 hours.
+            ✓ Your message has been sent! We&apos;ll get back to you within 24 hours.
           </div>
         )}
 

@@ -13,7 +13,7 @@ interface User {
 export default function AdminUsers() {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
-  const [currentUser, setCurrentUser] = useState<any>(null);
+  const [currentUser, setCurrentUser] = useState<{ name: string; role: string; phone: string } | null>(null);
 
   useEffect(() => {
     // Check if user is logged in and is admin

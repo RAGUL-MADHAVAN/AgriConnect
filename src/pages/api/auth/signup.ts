@@ -52,7 +52,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       verified: role === 'admin' ? true : false, // Admins are auto-verified, others need verification
     };
 
-    const result = await usersCollection.insertOne(newUser as any);
+    const result = await usersCollection.insertOne(newUser);
     newUser._id = result.insertedId.toString();
 
     // Generate token

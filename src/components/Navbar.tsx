@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 export default function Navbar() {
   const router = useRouter()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<{ name: string; role: string; phone: string } | null>(null)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -24,12 +24,13 @@ export default function Navbar() {
     }
   }, [])
 
-  const handleLogout = () => {
-    localStorage.removeItem('agriconnect:user')
-    localStorage.removeItem('agriconnect:token')
-    setUser(null)
-    router.push('/')
-  }
+  // Logout function - can be added to a dropdown menu later
+  // const handleLogout = () => {
+  //   localStorage.removeItem('agriconnect:user')
+  //   localStorage.removeItem('agriconnect:token')
+  //   setUser(null)
+  //   router.push('/')
+  // }
 
   const navLinks = user ? [
     { href: '/', label: 'Home' },
